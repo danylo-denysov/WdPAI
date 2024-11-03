@@ -10,12 +10,14 @@
 <div class = "main">
     <div class="right">
         <div>
-            <a href="login.html">
+            <a href="login.php">
                 <input class ="button" type="submit" value="Log in">
             </a>
         </div>
         <div>
+            <a href="sign.php">
                 <input class ="button" type="submit" value="Sign in">
+            </a>
         </div>
     </div>
     <div class="left">

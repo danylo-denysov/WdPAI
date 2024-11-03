@@ -21,7 +21,12 @@
         </div>
         <div>
             <label>
-                <input class ="button" type="submit" value="Log in">
+                <input class ="input" type="password" placeholder="repeat password">
+            </label>
+        </div>
+        <div>
+            <label>
+                <input class ="button" type="submit" value="Sign in">
             </label>
         </div>
     </div>
