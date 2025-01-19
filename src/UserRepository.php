@@ -1,6 +1,7 @@
 <?php
 
 namespace App;
+require_once __DIR__ . '/User.php';
 
 use PDO;
 
