@@ -42,6 +42,8 @@ $boards = $boardRepo->findAllByUser($userId);
                     </li>
                 <?php endforeach; ?>
             </ul>
+        </div>
+        <div style="border-top: 1px solid #444; padding: 1rem; margin-left:40px;">
             <button class="create-board-btn" onclick="window.location.href='create_board.php'">
                 + Nowa Tablica
             </button>

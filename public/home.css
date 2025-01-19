@@ -26,6 +26,7 @@ body {
     padding: 1rem;
     border-bottom: 1px solid #444;
     margin-left: 40px;
+    text-align: center;
 }
 
 .sidebar-header h2 {
@@ -33,7 +34,6 @@ body {
 }
 
 .board-list {
-    flex-grow: 1;
     padding: 1rem;
     overflow-y: auto;
 }
@@ -56,13 +56,19 @@ body {
     display: inline-block;
     margin-left: 20px;
     border: 1px solid black;
+    transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+
+    max-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
 }
 
 .board-list a:hover {
-    border: 2px solid black;
     background-color: #ffb6b6;
-    color: white;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    transform: scale(1.05) translateX(5px);
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .create-board-btn {
@@ -73,14 +79,12 @@ body {
     padding: 0.5rem;
     border-radius: 4px;
     cursor: pointer;
-    margin-left: 20px;
+    transition: all 0.3s ease;
 }
 
 .create-board-btn:hover {
-    border: 2px solid black;
     background-color: #ffb6b6;
-    color: white;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .main-content {
@@ -122,6 +126,7 @@ body {
     padding: 0.5rem 0.8rem;
     border-radius: 4px;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .board-action-btn:hover {
@@ -154,9 +159,11 @@ body {
     background-color: #f8f8f8;
     border-bottom: 1px solid #ddd;
     padding: 0.5rem;
-    display: flex;
     justify-content: space-between;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    text-align: left;
 }
 
 .task-group-header h2 {
@@ -165,20 +172,23 @@ body {
 
 .task-group-options {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.3rem;
 }
 
 .task-group-btn {
-    background-color: #999;
-    border: none;
-    color: #fff;
+    color: #7C00FE;
+    background-color: #ffb6b6;
     border-radius: 4px;
     padding: 0.3rem 0.6rem;
     cursor: pointer;
+    margin: 5px;
+    border: 1px solid black;
+    transition: all 0.3s ease;
 }
 
 .task-group-btn:hover {
-    background-color: #777;
+    background-color: #ffb6b6;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .task-group-body {
@@ -195,19 +205,6 @@ body {
 
 .task-item[draggable="true"] {
     cursor: grab;
-}
-
-.add-task-btn {
-    background-color: #dcdcdc;
-    border: none;
-    margin-top: 0.5rem;
-    padding: 0.3rem 0.6rem;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.add-task-btn:hover {
-    background-color: #ccc;
 }
 
 .add-group {
@@ -228,6 +225,7 @@ body {
     color: #007bff;
     cursor: pointer;
     font-size: 1rem;
+    transition: all 0.3s ease;
 }
 
 .user-panel {
@@ -248,12 +246,11 @@ body {
     border: 1px solid black;
     border-radius: 4px;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 .user-panel button:hover {
-    border: 2px solid black;
     background-color: #ffb6b6;
-    color: white;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .layout-container {
