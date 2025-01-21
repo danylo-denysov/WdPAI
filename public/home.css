@@ -201,6 +201,8 @@ body {
     padding: 0.5rem;
     border-radius: 4px;
     cursor: pointer;
+    text-align: left;
+    word-wrap: break-word;
 }
 
 .task-item[draggable="true"] {
