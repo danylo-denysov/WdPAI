@@ -45,21 +45,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Utwórz Nową Tablicę</title>
+    <link rel="stylesheet" href="editing.css">
 </head>
 <body>
-<h1>Utwórz Nową Tablicę</h1>
+<div class="main-content">
+    <h1>Utwórz Nową Tablicę</h1>
 
-<?php if ($message): ?>
-    <p style="color:red;"><?php echo htmlspecialchars($message); ?></p>
-<?php endif; ?>
+    <?php if ($message): ?>
+        <p class="message"><?php echo htmlspecialchars($message); ?></p>
+    <?php endif; ?>
 
-<form action="create_board.php" method="post">
-    <label>
-        Tytuł Tablicy:
-        <input type="text" name="title" required>
-    </label>
-    <button type="submit">Utwórz</button>
-</form>
-
+    <form action="create_board.php" method="post">
+        <label>
+            Tytuł Tablicy:
+            <input type="text" name="title" required>
+        </label>
+        <button type="submit">Utwórz</button>
+    </form>
+</div>
 </body>
 </html>

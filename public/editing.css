@@ -1,0 +1,168 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(to bottom, #C4FCF0, #2bbf9b);
+    font-family: Arial, sans-serif;
+}
+
+.main-content {
+    background-color: #fff;
+    padding: 2rem 3rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+form input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    width: 100%;
+}
+
+textarea{
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    width: 100%;
+}
+
+form button {
+    background-color: #ffb6b6;
+    color: #7C00FE;
+    border: 1px solid black;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form button:hover {
+    background-color: #fdbcbc;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+button {
+    background-color: #ffb6b6;
+    color: #7C00FE;
+    border: 1px solid black;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover{
+    background-color: #fdbcbc;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.message {
+    color: red;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+fieldset {
+    border: none; /* Usunięcie domyślnej ramki */
+    margin: 1rem 0;
+    padding: 0;
+    display: flex; /* Wyświetlenie elementów wewnątrz w jednej linii */
+    align-items: center; /* Wyrównanie w pionie */
+    justify-content: start; /* Wyrównanie od lewej strony */
+    gap: 1rem; /* Odstęp między opcjami */
+}
+
+legend {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    padding-right: 1rem; /* Opcjonalne, by odseparować tytuł od opcji */
+}
+
+label {
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Odstęp między radiobuttonem a tekstem */
+}
+
+input[type="radio"] {
+    margin: 0; /* Usunięcie dodatkowych marginesów */
+    padding: 0;
+}
+
+
+
+@media (max-width: 768px) {
+    .main-content {
+        width: 90%;
+        padding: 1rem 1.5rem;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    form label {
+        font-size: 0.95rem;
+    }
+
+    form input, textarea {
+        font-size: 0.95rem;
+    }
+
+    form button {
+        font-size: 0.95rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1rem;
+    }
+
+    form label {
+        font-size: 0.9rem;
+    }
+
+    form input, textarea {
+        font-size: 0.9rem;
+    }
+
+    form button {
+        font-size: 0.9rem;
+        padding: 0.3rem 0.6rem;
+    }
+}

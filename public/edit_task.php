@@ -62,24 +62,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Edycja zadania</title>
+    <link rel="stylesheet" href="editing.css">
 </head>
 <body>
-<h1>Edycja zadania (ID: <?php echo $taskId; ?>)</h1>
-
-<?php if ($message): ?>
-    <p style="color:red;"><?php echo htmlspecialchars($message); ?></p>
-<?php endif; ?>
-
-<form action="edit_task.php?id=<?php echo $taskId; ?>" method="post">
-    <label>Tytuł:
-        <input type="text" name="title" value="<?php echo htmlspecialchars($task->getTitle()); ?>" required>
-    </label>
-    <br><br>
-    <label>Opis:
-        <textarea name="description"><?php echo htmlspecialchars($task->getDescription()); ?></textarea>
-    </label>
-    <br><br>
-    <button type="submit">Zapisz</button>
-</form>
+<div class="main-content">
+    <h1>Edycja zadania (ID: <?php echo $taskId; ?>)</h1>
+    <?php if ($message): ?>
+        <p class="message"><?php echo htmlspecialchars($message); ?></p>
+    <?php endif; ?>
+    <form action="edit_task.php?id=<?php echo $taskId; ?>" method="post">
+        <label>
+            Tytuł:
+            <input type="text" name="title" value="<?php echo htmlspecialchars($task->getTitle()); ?>" required>
+        </label>
+        <label>
+            Opis:
+            <textarea name="description"><?php echo htmlspecialchars($task->getDescription()); ?></textarea>
+        </label>
+        <button type="submit">Zapisz</button>
+    </form>
+</div>
 </body>
 </html>
+

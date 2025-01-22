@@ -73,15 +73,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </form>
     <div class="left">
-        <div class="scroll-container">
-            <ul class="list">
-                <li class="item">Assign</li>
-                <li class="item">Prioritize</li>
-                <li class="item">Focus</li>
-            </ul>
+        <div class="logo-container">
+            <img src="/img/logo.png" alt="Logo" class="logo">
+        </div>
         </div>
     </div>
-    <script src="../index.js"></script>
 </div>
 
 

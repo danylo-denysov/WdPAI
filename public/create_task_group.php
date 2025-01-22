@@ -48,20 +48,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Utwórz Nową Grupę</title>
+    <link rel="stylesheet" href="editing.css">
 </head>
 <body>
-<h1>Utwórz Nową Grupę</h1>
-
-<?php if ($message): ?>
-    <p style="color:red;"><?php echo htmlspecialchars($message); ?></p>
-<?php endif; ?>
-
-<form action="create_task_group.php?board_id=<?php echo $boardId; ?>" method="post">
-    <label>Tytuł grupy:
-        <input type="text" name="title" required>
-    </label>
-    <button type="submit">Utwórz</button>
-</form>
-
+<div class="main-content">
+    <h1>Utwórz Nową Grupę</h1>
+    <?php if ($message): ?>
+        <p class="message"><?php echo htmlspecialchars($message); ?></p>
+    <?php endif; ?>
+    <form action="create_task_group.php?board_id=<?php echo $boardId; ?>" method="post">
+        <label>
+            Tytuł grupy:
+            <input type="text" name="title" required>
+        </label>
+        <button type="submit">Utwórz</button>
+    </form>
+</div>
 </body>
 </html>

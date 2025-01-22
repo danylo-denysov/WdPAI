@@ -68,26 +68,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Utwórz zadanie</title>
+    <link rel="stylesheet" href="editing.css">
 </head>
 <body>
-<h1>Utwórz nowe zadanie</h1>
-
-<?php if ($message): ?>
-    <p style="color:red;"><?php echo htmlspecialchars($message); ?></p>
-<?php endif; ?>
-
-<form action="create_task.php?group_id=<?php echo $groupId; ?>" method="post">
-    <label>
-        Tytuł zadania:
-        <input type="text" name="title" required>
-    </label>
-    <br><br>
-    <label>
-        Opis (opcjonalnie):
-        <textarea name="description"></textarea>
-    </label>
-    <br><br>
-    <button type="submit">Dodaj zadanie</button>
-</form>
+<div class="main-content">
+    <h1>Utwórz nowe zadanie</h1>
+    <?php if ($message): ?>
+        <p class="message"><?php echo htmlspecialchars($message); ?></p>
+    <?php endif; ?>
+    <form action="create_task.php?group_id=<?php echo $groupId; ?>" method="post">
+        <label>
+            Tytuł zadania:
+            <input type="text" name="title" required>
+        </label>
+        <label>
+            Opis (opcjonalnie):
+            <textarea name="description"></textarea>
+        </label>
+        <button type="submit">Dodaj zadanie</button>
+    </form>
+</div>
 </body>
 </html>
+

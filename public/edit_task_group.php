@@ -54,19 +54,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Edytuj kolumnę</title>
+    <link rel="stylesheet" href="editing.css">
 </head>
 <body>
-<h1>Edytuj kolumnę</h1>
-
-<?php if ($message): ?>
-    <p style="color:red;"><?php echo htmlspecialchars($message); ?></p>
-<?php endif; ?>
-
-<form action="edit_task_group.php?id=<?php echo $id; ?>" method="post">
-    <label>Nowa nazwa kolumny:
-        <input type="text" name="title" value="<?php echo htmlspecialchars($taskGroup->getTitle()); ?>" required>
-    </label>
-    <button type="submit">Zapisz</button>
-</form>
+<div class="main-content">
+    <h1>Edytuj kolumnę</h1>
+    <?php if ($message): ?>
+        <p class="message"><?php echo htmlspecialchars($message); ?></p>
+    <?php endif; ?>
+    <form action="edit_task_group.php?id=<?php echo $id; ?>" method="post">
+        <label>
+            Nowa nazwa grupy:
+            <input type="text" name="title" value="<?php echo htmlspecialchars($taskGroup->getTitle()); ?>" required>
+        </label>
+        <button type="submit">Zapisz</button>
+    </form>
+</div>
 </body>
 </html>
+
