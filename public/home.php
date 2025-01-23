@@ -33,7 +33,7 @@ $boards = $boardRepo->findAllByUser($userId);
     <div class="header-right">
         <span class="user-info"><?php echo htmlspecialchars($username); ?></span>
         <form action="logout.php" method="post">
-            <button type="submit" class="logout-btn">Wyloguj</button>
+            <button type="submit" class="logout-btn">Wyloguj się</button>
         </form>
     </div>
 </div>
