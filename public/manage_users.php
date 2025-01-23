@@ -64,6 +64,7 @@ if (isset($_POST['add_user'])) {
 if (isset($_POST['change_role'])) {
     $uid = $_POST['user_id'] ?? null;
     $newRole = $_POST['new_role'] ?? 'viewer';
+    $u = $userRepo->findById($uid);
 
     if ($uid) {
         if (!in_array($newRole, ['viewer','editor'], true)) {
@@ -75,7 +76,7 @@ if (isset($_POST['change_role'])) {
         } else {
             $ok = $boardRepo->updateUserRole($board->getId(), (int)$uid, $newRole);
             if ($ok) {
-                $message = "Zaktualizowano rolę użytkownika (ID $uid) na $newRole.";
+                $message = "Zaktualizowano rolę użytkownika {$u->getUsername()} (Email: {$u->getEmail()}) na $newRole.";
             } else {
                 $message = "Nie udało się zmienić roli.";
             }
@@ -85,13 +86,14 @@ if (isset($_POST['change_role'])) {
 
 if (isset($_POST['remove_user'])) {
     $uid = $_POST['user_id'] ?? null;
+    $u = $userRepo->findById($uid);
     if ($uid) {
         if ((int)$uid === $board->getOwnerId()) {
             $message = "Nie można usunąć właściciela tablicy.";
         } else {
             $ok = $boardRepo->removeUser($board->getId(), (int)$uid);
             if ($ok) {
-                $message = "Usunięto użytkownika o ID $uid z tablicy.";
+                $message = "Usunięto użytkownika {$u->getUsername()} (Email: {$u->getEmail()}) z tablicy.";
             } else {
                 $message = "Nie udało się usunąć użytkownika.";
             }

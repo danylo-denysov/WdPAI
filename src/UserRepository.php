@@ -34,6 +34,26 @@ class UserRepository
         return null;
     }
 
+    public function findById(int $id): ?User
+    {
+        $sql = "SELECT * FROM users WHERE id = :id LIMIT 1";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $data = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($data) {
+            return new User(
+                $data['id'],
+                $data['email'],
+                $data['username'],
+                $data['password'],
+                $data['created_at']
+            );
+        }
+        return null;
+    }
+
     public function save(User $user): bool
     {
         $sql = "INSERT INTO users (email, username, password) VALUES (:email, :username, :password)";

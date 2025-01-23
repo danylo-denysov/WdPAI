@@ -1,68 +1,58 @@
 <?php
 session_start();
 
+use App\Database;
+use App\BoardRepository;
+
+require_once __DIR__ . '/../src/Database.php';
+require_once __DIR__ . '/../src/BoardRepository.php';
+
 if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit;
 }
 
-use App\Database;
-use App\BoardRepository;
-require_once __DIR__ . '/../src/Database.php';
-require_once __DIR__ . '/../src/BoardRepository.php';
-
-$userId = (int)$_SESSION['user_id'];
+$userId   = (int)$_SESSION['user_id'];
 $username = $_SESSION['username'] ?? 'Nieznany';
+
 $db = Database::getConnection();
 $boardRepo = new BoardRepository($db);
+
 $boards = $boardRepo->findAllByUser($userId);
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Moja Tablica - Task Management</title>
-    <link rel="Stylesheet" type="text/css" href="home.css" />
+    <title>Moje Tablice</title>
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
 
-<div class="layout-container">
-
-    <div class="sidebar">
-        <div class="sidebar-header">
-            <h2>Moje Tablice</h2>
-        </div>
-        <div class="board-list">
-            <ul>
-                <?php foreach ($boards as $board): ?>
-                    <li>
-                        <a href="board_view.php?id=<?php echo $board->getId(); ?>">
-                            <?php echo htmlspecialchars($board->getTitle()); ?>
-                        </a>
-                    </li>
-                <?php endforeach; ?>
-            </ul>
-        </div>
-        <div style="border-top: 1px solid #444; padding: 1rem; margin-left:40px;">
-            <button class="create-board-btn" onclick="window.location.href='create_board.php'">
-                + Nowa Tablica
-            </button>
-        </div>
-    </div>
-
-    <div class="main-content">
-        <h1>Witaj w panelu z tablicami!</h1>
-        <p>Tutaj możesz wybrać jedną z dostępnych tablic z menu po lewej stronie lub utworzyć nową.</p>
-    </div>
-
-    <div class="user-panel">
-        <p>Zalogowano jako:</p>
-        <strong><?php echo htmlspecialchars($username); ?></strong>
+<div class="header">
+    <div class="header-right">
+        <span class="user-info"><?php echo htmlspecialchars($username); ?></span>
         <form action="logout.php" method="post">
-            <button type="submit">Wyloguj</button>
+            <button type="submit" class="logout-btn">Wyloguj</button>
         </form>
     </div>
-
 </div>
+
+<div class="main-container">
+    <h1>Lista tablic</h1>
+    <div class="board-container">
+        <?php foreach ($boards as $board): ?>
+            <a href="board_view.php?id=<?php echo $board->getId(); ?>" class="board-item">
+                <?php echo htmlspecialchars($board->getTitle()); ?>
+            </a>
+        <?php endforeach; ?>
+    </div>
+
+    <div class="new-board-btn-container">
+        <button onclick="window.location.href='create_board.php'">+ Dodaj Tablicę</button>
+    </div>
+</div>
+
 </body>
 </html>
+

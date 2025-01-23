@@ -1,309 +1,197 @@
+/* home.css */
+
+/* Reset ogólny */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
+/* Całe tło */
 body {
-    display: flex;
-    min-height: 100vh;
-}
-
-.sidebar {
-    width: 225px;
     background: linear-gradient(to bottom, #C4FCF0, #2bbf9b);
-    color: #fff;
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    border-right: 1px solid #ccc;
-}
-
-.sidebar-header {
-    color: #7C00FE;
-    padding: 1rem;
-    border-bottom: 1px solid #444;
-    margin-left: 40px;
-    text-align: center;
-}
-
-.sidebar-header h2 {
-    font-size: 1.2rem;
-}
-
-.board-list {
-    padding: 1rem;
-    overflow-y: auto;
-}
-
-.board-list ul {
-    list-style: none;
-    margin-bottom: 1rem;
-}
-
-.board-list ul li {
-    margin: 0.5rem 0;
-}
-
-.board-list a {
-    color: #7C00FE;
-    text-decoration: none;
-    background-color: #ffb6b6;
-    padding: 0.5rem;
-    border-radius: 4px;
-    display: inline-block;
-    margin-left: 20px;
-    border: 1px solid black;
-    transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-    max-width: 150px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    box-sizing: border-box;
-}
-
-.board-list a:hover {
-    background-color: #ffb6b6;
-    transform: scale(1.05) translateX(5px);
-    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-.create-board-btn {
-    margin-top: 0.5rem;
-    background-color: #ffb6b6;
-    color: #7C00FE;
-    border: 1px solid black;
-    padding: 0.5rem;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.create-board-btn:hover {
-    background-color: #ffb6b6;
-    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-.main-content {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    padding: 1rem;
 }
 
-.board-header {
+/* Górny pasek */
+.header {
+    width: 100%;
     background-color: #fff;
     border-bottom: 1px solid #ddd;
-    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.5rem 1rem;
+}
+
+.header-right {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 1rem;
 }
 
-.board-title h1 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+.user-info {
+    font-weight: bold;
+    color: #333;
 }
 
-.board-subtitle {
-    color: #666;
-    font-size: 0.9rem;
-}
-
-.board-actions {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.board-action-btn {
-    background-color: #7C00FE;
-    color: #ffb6b6;
-    border: 1px solid black;
+.logout-btn {
+    background-color: #ee5050;
+    color: #fff;
+    border: none;
     padding: 0.5rem 0.8rem;
     border-radius: 4px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
-.board-action-btn:hover {
-    background-color: #8918fa;
-    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
+.logout-btn:hover {
+    background-color: #dd2c2c;
 }
 
-.board-content {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1rem;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-}
-
-.task-group {
-    background-color: #fff;
-    width: 250px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-bottom: 1rem;
-    flex-shrink: 0;
-}
-
-.task-group-header {
-    background-color: #f8f8f8;
-    border-bottom: 1px solid #ddd;
-    padding: 0.5rem;
-    justify-content: space-between;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    max-width: 250px;
-    box-sizing: border-box;
-}
-
-.task-group-header h2 {
-    font-size: 1rem;
-    margin: 0;
-    max-width: 100%;
-    word-wrap: break-word;
-}
-
-.task-group-options {
-    display: flex;
-    gap: 0.3rem;
-}
-
-.task-group-btn {
-    color: #7C00FE;
-    background-color: #ffb6b6;
-    border-radius: 4px;
-    padding: 0.3rem 0.6rem;
-    cursor: pointer;
-    margin: 5px;
-    border: 1px solid black;
-    transition: all 0.3s ease;
-}
-
-.task-group-btn:hover {
-    background-color: #fdbcbc;
-    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-.task-group-body {
-    padding: 0.5rem;
-}
-
-.task-item {
-    background-color: #e9ecef;
-    margin: 0.5rem 0;
-    padding: 0.5rem;
-    border-radius: 4px;
-    cursor: pointer;
-    text-align: left;
-    word-wrap: break-word;
-}
-
-.add-group {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 150px;
-    height: 100px;
-    background-color: #fff;
-    border: 2px dashed #ddd;
-    color: #aaa;
-    border-radius: 4px;
-}
-
-.add-group-btn {
-    background: none;
-    border: none;
-    color: #7C00FE;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-.user-panel {
-    width: 225px;
-    background: linear-gradient(to bottom, #C4FCF0, #2bbf9b);
-    border-left: 1px solid #ccc;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.user-panel button {
-    margin-top: 1rem;
-    color: #7C00FE;
-    background-color: #fa514b;
-    padding: 0.5rem;
-    border: 1px solid black;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-.user-panel button:hover {
-    background-color: #fdbcbc;
-    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-.layout-container {
-    display: flex;
+/* Główna sekcja */
+.main-container {
     width: 100%;
+    max-width: 1200px; /* możesz zmienić wedle potrzeb */
+    margin: 2rem auto; /* wycentrowanie */
+    text-align: center;
+    padding: 0 1rem;
 }
 
+.main-container h1 {
+    margin-bottom: 1rem;
+}
+
+/* Kontener na listę tablic */
+.board-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* wyśrodkowanie */
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Każda tablica jako link (czy "kafelek") */
+.board-item {
+    display: inline-block;
+    background-color: #fff;
+    color: #333;
+    text-decoration: none;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    min-width: 180px;
+    max-width: 250px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.board-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Kontener na przycisk dodawania tablicy */
+.new-board-btn-container {
+    margin-top: 1rem;
+}
+
+.new-board-btn-container button {
+    /*background-color: #2bbf9b;*/
+    /*color: #fff;*/
+    /*border: none;*/
+    /*padding: 0.6rem 1rem;*/
+    /*border-radius: 4px;*/
+    /*cursor: pointer;*/
+    /*font-size: 1rem;*/
+    /*transition: background-color 0.3s;*/
+    background-color: #ffb6b6;
+    color: #7C00FE;
+    border: 1px solid black;
+    padding: 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.new-board-btn-container button:hover {
+    /*background-color: #249a82;*/
+    background-color: #fdbcbc;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* MEDIA QUERIES */
+
+/* Ekrany średnie (tablety) */
 @media (max-width: 768px) {
-    body {
-        flex-direction: column;
+    .main-container {
+        margin-top: 1rem;
     }
 
-    .sidebar {
-        width: 100%;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-        overflow-x: auto;
-        border-right: none;
-        border-bottom: 1px solid #ccc;
-    }
-
-    .board-list ul li {
-        margin-left: 0px;
-    }
-
-    .main-content {
-        flex-grow: 0;
-        width: 100%;
-    }
-
-    .board-content {
-        flex-wrap: wrap;
-        gap: 0.5rem;
-    }
-
-    .task-group {
-        width: 200px;
+    .board-item {
+        min-width: 140px;
     }
 }
 
+/* Ekrany małe (telefony) */
 @media (max-width: 480px) {
-    .sidebar {
-        flex-direction: column;
-        gap: 10px;
-        padding: 0.5rem;
-    }
-    .board-list ul li {
-        margin: 0.3rem 0;
-    }
-    .create-board-btn {
-        width: 100%;
+    .logout-btn {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.6rem;
     }
 
-    .task-group {
-        width: 180px;
+    .board-item {
+        padding: 0.6rem;
+        font-size: 0.9rem;
     }
 }
+
+.header {
+    width: 100%;
+    height: 82px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: flex-end; /* lub space-between */
+    padding: 0.5rem 1rem;
+    align-items: center;
+}
+
+.header-left, .header-right {
+    display: flex;
+    align-items: center;
+}
+
+.back-to-boards-btn {
+    background-color: #2bbf9b;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-right: 1rem;
+}
+
+.back-to-boards-btn:hover {
+    background-color: #249a82;
+}
+
+.logout-btn {
+    background-color: #ee5050;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+.logout-btn:hover {
+    background-color: #dd2c2c;
+}
+
+/* styl .board-container, .board-content, .task-group, .task-item itp.
+   może być podobny do tego z home.css
+*/
