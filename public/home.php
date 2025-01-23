@@ -55,4 +55,3 @@ $boards = $boardRepo->findAllByUser($userId);
 
 </body>
 </html>
-

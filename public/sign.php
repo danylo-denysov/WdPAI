@@ -76,7 +76,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="logo-container">
             <img src="/img/logo.png" alt="Logo" class="logo">
         </div>
-        </div>
     </div>
 </div>
 

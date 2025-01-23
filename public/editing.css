@@ -91,19 +91,19 @@ button:hover{
 }
 
 fieldset {
-    border: none; /* Usunięcie domyślnej ramki */
+    border: none;
     margin: 1rem 0;
     padding: 0;
-    display: flex; /* Wyświetlenie elementów wewnątrz w jednej linii */
-    align-items: center; /* Wyrównanie w pionie */
-    justify-content: start; /* Wyrównanie od lewej strony */
-    gap: 1rem; /* Odstęp między opcjami */
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 1rem;
 }
 
 legend {
     font-size: 1rem;
     margin-bottom: 0.5rem;
-    padding-right: 1rem; /* Opcjonalne, by odseparować tytuł od opcji */
+    padding-right: 1rem;
 }
 
 label {
@@ -111,11 +111,11 @@ label {
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 0.5rem; /* Odstęp między radiobuttonem a tekstem */
+    gap: 0.5rem;
 }
 
 input[type="radio"] {
-    margin: 0; /* Usunięcie dodatkowych marginesów */
+    margin: 0;
     padding: 0;
 }
 

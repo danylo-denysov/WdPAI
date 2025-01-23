@@ -121,9 +121,6 @@ body {
     box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* MEDIA QUERIES */
-
-/* Ekrany średnie (tablety) */
 @media (max-width: 768px) {
     .main-container {
         margin-top: 1rem;
@@ -134,7 +131,6 @@ body {
     }
 }
 
-/* Ekrany małe (telefony) */
 @media (max-width: 480px) {
     .logout-btn {
         font-size: 0.9rem;
@@ -153,7 +149,7 @@ body {
     background-color: #fff;
     border-bottom: 1px solid #ddd;
     display: flex;
-    justify-content: flex-end; /* lub space-between */
+    justify-content: flex-end;
     padding: 0.5rem 1rem;
     align-items: center;
 }
@@ -191,7 +187,3 @@ body {
 .logout-btn:hover {
     background-color: #dd2c2c;
 }
-
-/* styl .board-container, .board-content, .task-group, .task-item itp.
-   może być podobny do tego z home.css
-*/
