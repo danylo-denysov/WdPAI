@@ -1,0 +1,21 @@
+docker compose up -d (powinien sie uruchomic konter z baza danych oraz tabele i widoki w bazie)
+docker exec -it my-postgres bash (wejscie do kontera)
+psql -U myuser -d mydatabase (wejscie do bazy)
+
+
+JESLI NIE STWORZYLY SIE TABELE I WIDOKI TO ZROBIC TO:
+docker cp init.sql my-postgres:/tmp/init.sql
+docker exec -it my-postgres psql -U myuser -d mydatabase -f /tmp/init.sql
+
+
+WIDOKI W BAZIE
+\d view_user_boards
+SELECT * FROM view_user_boards;
+\d+ view_tasks_info
+SELECT * FROM view_tasks_info;
+
+Przykladowa transakcja jest w pliku RegisterController
+
+Hasla w bazie sa hashowane, wiec mozna zarejestrowac przykladowego uzytkonwika:
+abc@mail.com
+123
