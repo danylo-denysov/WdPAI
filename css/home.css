@@ -1,21 +1,15 @@
-/* home.css */
-
-/* Reset ogólny */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Całe tło */
 body {
     background: linear-gradient(to bottom, #C4FCF0, #2bbf9b);
     min-height: 100vh;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
 }
 
-/* Górny pasek */
 .header {
     width: 100%;
     background-color: #fff;
@@ -50,11 +44,10 @@ body {
     background-color: #dd2c2c;
 }
 
-/* Główna sekcja */
 .main-container {
     width: 100%;
-    max-width: 1200px; /* możesz zmienić wedle potrzeb */
-    margin: 2rem auto; /* wycentrowanie */
+    max-width: 1200px;
+    margin: 2rem auto;
     text-align: center;
     padding: 0 1rem;
 }
@@ -63,16 +56,14 @@ body {
     margin-bottom: 1rem;
 }
 
-/* Kontener na listę tablic */
 .board-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* wyśrodkowanie */
+    justify-content: center;
     gap: 1rem;
     margin-bottom: 2rem;
 }
 
-/* Każda tablica jako link (czy "kafelek") */
 .board-item {
     display: inline-block;
     background-color: #fff;
@@ -92,7 +83,6 @@ body {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Kontener na przycisk dodawania tablicy */
 .new-board-btn-container {
     margin-top: 1rem;
 }
@@ -145,33 +135,16 @@ body {
 
 .header {
     width: 100%;
-    height: 82px;
     background-color: #fff;
     border-bottom: 1px solid #ddd;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     padding: 0.5rem 1rem;
-    align-items: center;
 }
 
-.header-left, .header-right {
-    display: flex;
-    align-items: center;
-}
-
-.back-to-boards-btn {
-    background-color: #2bbf9b;
-    color: #fff;
-    border: none;
-    padding: 0.5rem 0.8rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    margin-right: 1rem;
-}
-
-.back-to-boards-btn:hover {
-    background-color: #249a82;
+.header-right{
+    gap: 0;
 }
 
 .logout-btn {
@@ -181,7 +154,7 @@ body {
     padding: 0.5rem 0.8rem;
     border-radius: 4px;
     cursor: pointer;
-    margin-left: 1rem;
+    margin-left: 0.5rem;
 }
 
 .logout-btn:hover {

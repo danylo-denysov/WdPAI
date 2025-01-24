@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="Stylesheet" type="text/css" href="start.css" />
+    <link rel="Stylesheet" type="text/css" href="../css/start.css" />
 </head>
 <body>
 

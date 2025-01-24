@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS tasks (
     title VARCHAR(255) NOT NULL,
     description TEXT,
     position INT NOT NULL DEFAULT 0,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    created_at TIMESTAMP,
     deadline TIMESTAMP,
     is_done BOOLEAN DEFAULT false
     );
@@ -75,3 +75,46 @@ ALTER TABLE tasks
         FOREIGN KEY (assigned_user_id)
             REFERENCES users (id)
             ON DELETE SET NULL;
+
+
+
+CREATE OR REPLACE VIEW view_user_boards AS
+SELECT
+    b.id AS board_id,
+    b.title AS board_title,
+    b.owner_id AS owner_id,
+    u.username AS owner_username,
+    u.email AS owner_email,
+    b.created_at AS board_created_at
+FROM boards b
+         JOIN users u ON b.owner_id = u.id
+ORDER BY b.created_at DESC;
+
+CREATE OR REPLACE VIEW view_tasks_info AS
+SELECT
+    t.id            AS task_id,
+    t.title         AS task_title,
+    t.description   AS task_description,
+    t.position      AS task_position,
+    tg.title        AS group_title,
+    b.title         AS board_title,
+    t.created_at    AS task_created_at
+FROM tasks t
+         JOIN task_groups tg ON t.group_id = tg.id
+         JOIN boards b ON tg.board_id = b.id
+ORDER BY b.id, tg.id, t.position;
+
+CREATE OR REPLACE FUNCTION set_task_created_at()
+RETURNS TRIGGER AS $$
+BEGIN
+    IF NEW.created_at IS NULL THEN
+        NEW.created_at := NOW();
+END IF;
+RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER tasks_created_at_trigger
+    BEFORE INSERT ON tasks
+    FOR EACH ROW
+    EXECUTE PROCEDURE set_task_created_at();

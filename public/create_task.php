@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Utwórz zadanie</title>
-    <link rel="stylesheet" href="editing.css">
+    <link rel="stylesheet" href="../css/editing.css">
 </head>
 <body>
 <div class="main-content">

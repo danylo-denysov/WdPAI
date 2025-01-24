@@ -34,14 +34,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="Stylesheet" type="text/css" href="login.css" />
+    <link rel="Stylesheet" type="text/css" href="../css/login.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
 <div class = "main">
-        <?php if (!empty($message)): ?>
-            <p style="color:red;"><?php echo $message; ?></p>
-        <?php endif; ?>
+    <?php if (!empty($message)): ?>
+        <script>
+            Swal.fire({
+                title: 'Uwaga!',
+                text: '<?php echo addslashes($message); ?>',
+                icon: 'error',  //'warning', 'info', 'success'
+                confirmButtonText: 'OK'
+            });
+        </script>
+    <?php endif; ?>
         <form action="login.php" method="post" class="right">
             <div>
                 <label>

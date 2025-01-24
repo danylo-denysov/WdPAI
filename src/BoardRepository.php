@@ -63,7 +63,7 @@ class BoardRepository
             FROM boards b
             LEFT JOIN board_users bu ON b.id = bu.board_id
             WHERE b.owner_id = :userId OR bu.user_id = :userId
-            ORDER BY b.created_at DESC
+            ORDER BY b.created_at ASC
         ";
         $stmt = $this->connection->prepare($sql);
         $stmt->bindValue(':userId', $userId, PDO::PARAM_INT);

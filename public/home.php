@@ -25,7 +25,7 @@ $boards = $boardRepo->findAllByUser($userId);
 <head>
     <meta charset="UTF-8">
     <title>Moje Tablice</title>
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="../css/home.css">
 </head>
 <body>
 
@@ -35,6 +35,11 @@ $boards = $boardRepo->findAllByUser($userId);
         <form action="logout.php" method="post">
             <button type="submit" class="logout-btn">Wyloguj się</button>
         </form>
+
+        <button class="logout-btn"
+                onclick="if(confirm('Na pewno chcesz usunąć konto?')) { window.location.href='delete_account.php'; }">
+            Usuń konto
+        </button>
     </div>
 </div>
 

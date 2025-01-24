@@ -6,9 +6,12 @@
 }
 
 body {
+    min-height: 100vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
     background: linear-gradient(to bottom, #C4FCF0, #2bbf9b);
-    font-family: Arial, sans-serif;
-    height: 100vh;
 }
 
 .header {
@@ -16,13 +19,12 @@ body {
     background-color: #fff;
     border-bottom: 1px solid #ddd;
     display: flex;
+    justify-content: flex-end;
     align-items: center;
-    justify-content: space-between;
     padding: 0.5rem 1rem;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000;
 }
 
 .header-left, .header-center, .header-right {
@@ -35,6 +37,14 @@ body {
     margin-left: 40px;
 }
 
+.header-left{
+    margin-right: auto;
+}
+
+.header-right{
+    margin-left: auto;
+}
+
 .back-btn {
     background-color: #ffb6b6;
     color: #7C00FE;
@@ -43,6 +53,7 @@ body {
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s ease;
+    margin-right: 50px;
 }
 
 .back-btn:hover {
@@ -89,6 +100,7 @@ body {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin-right: 0.5rem;
 }
 
 .logout-btn:hover {

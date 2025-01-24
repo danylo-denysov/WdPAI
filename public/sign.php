@@ -37,13 +37,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="Stylesheet" type="text/css" href="sign.css" />
+    <link rel="Stylesheet" type="text/css" href="../css/sign.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
 <div class = "main">
     <?php if (!empty($message)): ?>
-        <p style="color:red;"><?php echo $message; ?></p>
+        <script>
+            Swal.fire({
+                title: 'Uwaga!',
+                text: '<?php echo addslashes($message); ?>',
+                icon: 'error',  // 'warning', 'info', 'success'
+                confirmButtonText: 'OK'
+            });
+        </script>
     <?php endif; ?>
     <form action="sign.php" method="POST" class="right">
         <div>

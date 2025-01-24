@@ -56,14 +56,21 @@ class TaskGroupRepository
     }
 
 
-    public function save(TaskGroup $group): bool
-    {
-        $sql = "INSERT INTO task_groups (board_id, title, position) VALUES (:board_id, :title, :position)";
-        $stmt = $this->connection->prepare($sql);
-        $stmt->bindValue(':board_id', $group->getBoardId(), PDO::PARAM_INT);
-        $stmt->bindValue(':title', $group->getTitle());
-        $stmt->bindValue(':position', $group->getPosition(), PDO::PARAM_INT);
+    public function save(TaskGroup $group): bool {
+        $sqlMax = "SELECT MAX(position) AS max_pos FROM task_groups WHERE board_id = :b";
+        $stmtMax = $this->connection->prepare($sqlMax);
+        $stmtMax->bindValue(':b', $group->getBoardId(), PDO::PARAM_INT);
+        $stmtMax->execute();
+        $row = $stmtMax->fetch(PDO::FETCH_ASSOC);
+        $maxPosition = $row['max_pos'] ?? 0;
 
+        $group->setPosition($maxPosition + 1);
+
+        $sql = "INSERT INTO task_groups (board_id, title, position) VALUES (:b, :title, :pos)";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bindValue(':b', $group->getBoardId());
+        $stmt->bindValue(':title', $group->getTitle());
+        $stmt->bindValue(':pos', $group->getPosition());
         return $stmt->execute();
     }
 
