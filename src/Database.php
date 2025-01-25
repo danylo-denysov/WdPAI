@@ -14,7 +14,8 @@ class Database
     public static function getConnection(): PDO
     {
         if (self::$connection === null) {
-            $host = 'localhost';
+//            $host = 'localhost';
+            $host = 'db';
             $port = '5432';
             $dbname = 'mydatabase';
             $user = 'myuser';

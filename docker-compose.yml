@@ -1,5 +1,15 @@
 version: '3.8'
 services:
+  php:
+    build: .
+    container_name: my-php
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    networks:
+      - mynet
+
   db:
     image: postgres:latest
     container_name: my-postgres
@@ -12,5 +22,11 @@ services:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
       - "5432:5432"
+    networks:
+      - mynet
+
+networks:
+  mynet:
+
 volumes:
   db-data:

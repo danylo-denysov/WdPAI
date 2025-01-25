@@ -53,7 +53,7 @@ $groups = $groupRepo->findAllByBoard($board->getId());
 <head>
     <meta charset="UTF-8">
     <title><?php echo htmlspecialchars($board->getTitle()); ?></title>
-    <link rel="stylesheet" href="../css/board_view.css">
+    <link rel="stylesheet" href="css/board_view.css">
     <script>
         const userRole = '<?php echo $userRole; ?>';
     </script>

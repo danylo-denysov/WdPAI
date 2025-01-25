@@ -25,7 +25,7 @@ $boards = $boardRepo->findAllByUser($userId);
 <head>
     <meta charset="UTF-8">
     <title>Moje Tablice</title>
-    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
 

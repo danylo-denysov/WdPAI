@@ -77,7 +77,7 @@ ALTER TABLE tasks
             ON DELETE SET NULL;
 
 
-
+/*WIDOKI*/
 CREATE OR REPLACE VIEW view_user_boards AS
 SELECT
     b.id AS board_id,
@@ -104,6 +104,7 @@ FROM tasks t
          JOIN boards b ON tg.board_id = b.id
 ORDER BY b.id, tg.id, t.position;
 
+/*FUNKCJA, TRIGGER*/
 CREATE OR REPLACE FUNCTION set_task_created_at()
 RETURNS TRIGGER AS $$
 BEGIN
@@ -118,3 +119,32 @@ CREATE TRIGGER tasks_created_at_trigger
     BEFORE INSERT ON tasks
     FOR EACH ROW
     EXECUTE PROCEDURE set_task_created_at();
+
+
+/*PRZYKLADOWE DANE*/
+INSERT INTO users (email, username, password)
+VALUES ('abc@mail.com', 'abc', '$2y$10$3xlcwGp9wkZu6EEpBNVko.DYV9SR5rTxfuYM6S6w0Zd5oYPGei8eu');
+
+INSERT INTO boards (title, owner_id)
+SELECT 'Tablica testowa', u.id
+FROM users u
+WHERE u.email = 'abc@mail.com'
+    LIMIT 1;
+
+INSERT INTO task_groups (board_id, title, position)
+SELECT b.id, 'Grupa test', 0
+FROM boards b
+         JOIN users u ON b.owner_id = u.id
+WHERE b.title = 'Tablica testowa'
+  AND u.email = 'abc@mail.com'
+    LIMIT 1;
+
+INSERT INTO tasks (group_id, title, description, position)
+SELECT tg.id, 'Zadanie startowe', 'Przykładowy opis', 0
+FROM task_groups tg
+         JOIN boards b ON tg.board_id = b.id
+         JOIN users u ON b.owner_id = u.id
+WHERE b.title = 'Tablica testowa'
+  AND tg.title = 'Grupa test'
+  AND u.email = 'abc@mail.com'
+    LIMIT 1;

@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Edytuj nazwę tablicy</title>
-    <link rel="stylesheet" href="../css/editing.css">
+    <link rel="stylesheet" href="css/editing.css">
 </head>
 <body>
 <div class="main-content">

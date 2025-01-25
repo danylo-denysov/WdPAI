@@ -108,7 +108,7 @@ $boardUsers = $boardRepo->getBoardUsers($board->getId());
 <head>
     <meta charset="UTF-8">
     <title>Zarządzanie użytkownikami tablicy</title>
-    <link rel="stylesheet" href="../css/editing.css">
+    <link rel="stylesheet" href="css/editing.css">
 </head>
 <body>
 <div class="main-content">

@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="Stylesheet" type="text/css" href="../css/sign.css" />
+    <link rel="Stylesheet" type="text/css" href="css/sign.css" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
@@ -82,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </form>
     <div class="left">
         <div class="logo-container">
-            <img src="/img/logo.png" alt="Logo" class="logo">
+            <img src="./img/logo.png" alt="Logo" class="logo">
         </div>
     </div>
 </div>

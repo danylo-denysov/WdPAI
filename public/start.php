@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="Stylesheet" type="text/css" href="../css/start.css" />
+    <link rel="Stylesheet" type="text/css" href="css/start.css" />
 </head>
 <body>
 
@@ -22,7 +22,7 @@
     </div>
     <div class="left">
         <div class="logo-container">
-            <img src="/img/logo.png" alt="Logo" class="logo">
+            <img src="./img/logo.png" alt="Logo" class="logo">
         </div>
     </div>
 </div>
