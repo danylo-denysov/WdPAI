@@ -159,7 +159,7 @@ $boardUsers = $boardRepo->getBoardUsers($board->getId());
                     <?php else: ?>
                         <form action="manage_users.php?board_id=<?php echo $board->getId(); ?>" method="post" style="display:inline;">
                             <input type="hidden" name="user_id" value="<?php echo $bu['user_id']; ?>">
-                            <select name="new_role">
+                            <select name="new_role" style="border-radius: 4px; padding: 3px;">
                                 <option value="viewer">viewer</option>
                                 <option value="editor">editor</option>
                             </select>
