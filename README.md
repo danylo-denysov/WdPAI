@@ -14,7 +14,7 @@ Aplikacja umożliwia tworzenie i zarządzanie tablicami zadań oraz kolumnami, 
    - Tablice można usuwać lub edytować ich nazwę.
 
 3. **Zarządzanie kolumnami (grupami zadań)**  
-   - W danej tablicy można tworzyć oraz edytować wiele kolumn (np. „Do zrobienia”, „W trakcie”, „Zrobione”).  
+   - W danej tablicy można tworzyć wiele kolumn (np. „Do zrobienia”, „W trakcie”, „Zrobione”).  
    - Można je edytować i usuwać.  
 
 4. **Zarządzanie zadaniami**  
@@ -58,7 +58,7 @@ Wejść w przeglądarce na `http://localhost:8080`
 
 ## Baza danych
 
-### 1. Wizualizacja tabel (oraz dwa widoki) sie znajduje w pliku `Database_schema.png`
+### 1. Wizualizacja tabel (oraz dwa widoki) znajduje się w pliku `Database_schema.png`
 
 ### 2. Krótki opis bazy
   - `users` - Przechowuje dane logowania (email, zahashowane hasło, username).
