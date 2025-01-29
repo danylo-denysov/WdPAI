@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 confirmButtonText: 'OK'
             });
         </script>
-    <?php endif; ?>
+    <?php endif;?>
     <form action="sign.php" method="POST" class="right">
         <div>
             <label>
