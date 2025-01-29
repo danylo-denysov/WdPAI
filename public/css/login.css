@@ -1,10 +1,10 @@
-body
-{
+body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-.main
-{
+.main {
     background: linear-gradient(to bottom, #C4FCF0, #2bbf9b);
     width: 100%;
     height: 100%;
@@ -18,8 +18,7 @@ body
     gap: 50px;
 }
 
-.input
-{
+.input {
     font-size: 30px;
     width: 350px;
     height: 60px;
@@ -31,11 +30,9 @@ body
     color: #ff8b8b;
     font-weight: bold;
     cursor: pointer;
-    text-decoration: none;
 }
 
-.button
-{
+.button {
     font-size: 30px;
     width: 150px;
     height: 50px;
@@ -47,10 +44,8 @@ body
     color: #ff8b8b;
     font-weight: bold;
     cursor: pointer;
-    text-decoration: none;
     margin-left: 110px;
 }
-
 .button:hover {
     border: 2px solid black;
     background-color: #ffb6b6;
@@ -59,11 +54,9 @@ body
     0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
-.left
-{
+.left {
     width: 500px;
     height: 500px;
-    border-width: 1px;
     font-size: 40px;
     color: #7C00FE;
     border-radius: 15px;
@@ -74,11 +67,9 @@ body
     padding: 30px;
 }
 
-.right
-{
+.right {
     width: 500px;
     height: 500px;
-    border-width: 1px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -104,8 +95,8 @@ body
 @media (max-width: 768px) {
     .main {
         flex-direction: column;
-        position: static;
         height: auto;
+        position: static;
         gap: 30px;
     }
     .left, .right {
@@ -127,14 +118,22 @@ body
 }
 
 @media (max-width: 480px) {
+    .main {
+        flex-direction: column;
+    }
+    .left, .right {
+        width: 90%;
+        height: auto;
+    }
     .input {
         font-size: 20px;
-        width: 240px;
+        width: 220px;
         height: 40px;
     }
     .button {
         font-size: 20px;
-        width: 110px;
+        width: 100px;
         height: 40px;
+        margin-left: 0;
     }
 }
