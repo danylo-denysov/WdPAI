@@ -125,7 +125,7 @@ $boardUsers = $boardRepo->getBoardUsers($board->getId());
         </label>
         <label>
             Rola:
-            <select name="role">
+            <select name="role" style="border-radius: 4px; padding: 3px;">
                 <option value="viewer">viewer</option>
                 <option value="editor">editor</option>
             </select>
