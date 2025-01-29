@@ -99,3 +99,16 @@ Dodatkowo:
   - Utworzony trigger `tasks_created_at_trigger`
   - Transakcję można wyszukać w kodzie "TRANSAKCJA", jest w pliku `RegisterController`, jest stosowana do utworzenia tablicy dla nowo zarejestrowanego użytkownika
   - Są wstawione przykładowe dane, konto istniejącego użytkownika: `email` - abc@mail.com, `hasło` - 123; lub można zarejestrować własnego
+
+![image](Views/start_page.png)
+![image](Views/login.png)
+![image](Views/register.png)
+![image](Views/home.png)
+![image](Views/board_view_page.png)
+![image](Views/manage_users.png)
+![image](Views/create_board.png)
+![image](Views/edit_board.png)
+![image](Views/create_group.png)
+![image](Views/edit_group.png)
+![image](Views/create_task.png)
+![image](Views/edit_task.png)
