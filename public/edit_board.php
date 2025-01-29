@@ -71,9 +71,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </label>
         <button type="submit">Zapisz</button>
     </form>
-    <p>
-        <button onclick="window.location.href='board_view.php?id=<?php echo $boardId; ?>'">Powrót do tablicy</button>
-    </p>
 </div>
 </body>
 </html>

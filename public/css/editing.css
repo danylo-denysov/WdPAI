@@ -58,6 +58,21 @@ form button:hover {
     box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
 }
 
+.back-btn {
+    background-color: #ffb6b6;
+    color: #7C00FE;
+    border: 1px solid black;
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-right: 50px;
+}
+.back-btn:hover {
+    background-color: #fdbcbc;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
 .message {
     color: red;
     font-size: 1rem;

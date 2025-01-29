@@ -178,7 +178,7 @@ $boardUsers = $boardRepo->getBoardUsers($board->getId());
     </table>
 
     <br>
-    <button onclick="window.location.href='board_view.php?id=<?php echo $board->getId(); ?>'">
+    <button class="back-btn" onclick="window.location.href='board_view.php?id=<?php echo $board->getId(); ?>'">
         Powrót do tablicy
     </button>
 </div>
