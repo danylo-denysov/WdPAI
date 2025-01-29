@@ -1,6 +1,6 @@
 # Projekt Tablicy Zadań (TaskPilot)
 
-Aplikacja umożliwia tworzenie i zarządzanie tablicami zadań (boards) oraz kolumnami (task_groups), w których znajdują się zadania (tasks). Dzięki temu można wygodnie organizować projekty i przypisywać zadania do użytkowników.
+Aplikacja umożliwia tworzenie i zarządzanie tablicami zadań oraz kolumnami, w których znajdują się zadania. Dzięki temu można wygodnie organizować projekty i przypisywać zadania do użytkowników.
 
 ## Funkcjonalności
 
@@ -14,7 +14,7 @@ Aplikacja umożliwia tworzenie i zarządzanie tablicami zadań (boards) oraz ko
    - Tablice można usuwać lub edytować ich nazwę.
 
 3. **Zarządzanie kolumnami (grupami zadań)**  
-   - W danej tablicy można tworzyć oraz edytować wiele kolumn (np. „Do zrobienia”, „W trakcie”, „Zrobione”).  
+   - W danej tablicy można tworzyć wiele kolumn (np. „Do zrobienia”, „W trakcie”, „Zrobione”).  
    - Można je edytować i usuwać.  
 
 4. **Zarządzanie zadaniami**  
@@ -36,8 +36,7 @@ Aplikacja umożliwia tworzenie i zarządzanie tablicami zadań (boards) oraz ko
 
 ### 1. Klonuj repozytorium
 ```bash
-git clone https://github.com/twoj-konto/projekt-tablica-zadan.git
-cd projekt-tablica-zadan
+git clone https://github.com/danylo-denysov/WdPAI
 ```
 
 ### 2. Pliki Docker
@@ -59,7 +58,7 @@ Wejść w przeglądarce na `http://localhost:8080`
 
 ## Baza danych
 
-### 1. Wizualizacja tabel (oraz dwa widoki) sie znajduje w pliku `Database_schema.png`
+### 1. Wizualizacja tabel (oraz dwa widoki) znajduje się w pliku `Database_schema.png`
 
 ### 2. Krótki opis bazy
   - `users` - Przechowuje dane logowania (email, zahashowane hasło, username).
