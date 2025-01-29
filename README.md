@@ -1,6 +1,6 @@
 # Projekt Tablicy Zadań (TaskPilot)
 
-Aplikacja umożliwia tworzenie i zarządzanie tablicami zadań (boards) oraz kolumnami (task_groups), w których znajdują się zadania (tasks). Dzięki temu można wygodnie organizować projekty i przypisywać zadania do użytkowników.
+Aplikacja umożliwia tworzenie i zarządzanie tablicami zadań oraz kolumnami, w których znajdują się zadania. Dzięki temu można wygodnie organizować projekty i przypisywać zadania do użytkowników.
 
 ## Funkcjonalności
 
