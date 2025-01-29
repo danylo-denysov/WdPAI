@@ -37,7 +37,6 @@ Aplikacja umożliwia tworzenie i zarządzanie tablicami zadań oraz kolumnami, 
 ### 1. Klonuj repozytorium
 ```bash
 git clone https://github.com/danylo-denysov/WdPAI
-cd projekt-tablica-zadan
 ```
 
 ### 2. Pliki Docker
